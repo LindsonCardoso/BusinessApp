@@ -59,9 +59,7 @@ export default function App() {
 
    if (!appIsReady) return null;
 
-
    return (
-
       <ThemeProvider theme={COLORS}>
          <View onLayout={onLayoutRootView} style={styles.container}>
             <NavigationContainer>

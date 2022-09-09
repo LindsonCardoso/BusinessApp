@@ -35,26 +35,11 @@ const HeaderStack: React.FC<props> = ({images}) => {
    }
 
   return (
-      <View style={{ width: "100%", height: 400,}}>
+      <View style={{ width: "100%"}}>
         <SwiperComponent
             images={images}
         />
-        <CircleButton
-          imgUrl={assets.left}
-          handlePress={voltar}
-          top={StatusBar.currentHeight + 10}
-          left={15}
-        />
-
-        <CircleButton
-          imgUrl={assets.heart}
-          right={15}
-          top={StatusBar.currentHeight + 10}
-        />
       </View>
-
-
-
   )
 }
 

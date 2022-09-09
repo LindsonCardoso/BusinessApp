@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Image, Text } from "react-native";
+import { RFValue } from 'react-native-responsive-fontsize';
 import theme from '../../styles/theme';
 import { assets } from '../../utils/'
 
@@ -20,8 +21,9 @@ const CardTitle: React.FC<PropsTitleCard> = ({ subTitle, subTitleSize, title, ti
          <Text
             style={{
                fontFamily: 'Poppins_600SemiBold',
-               fontSize: titleSize,
+               fontSize:  RFValue(titleSize),
                color: theme.COLORS.primary,
+               flex: 1,
             }}
          >
             {title}
@@ -29,8 +31,9 @@ const CardTitle: React.FC<PropsTitleCard> = ({ subTitle, subTitleSize, title, ti
          <Text
             style={{
                fontFamily: 'Poppins_400Regular',
-               fontSize: subTitleSize,
+               fontSize: RFValue(subTitleSize),
                color: theme.COLORS.primary,
+
             }}
          >
             by {subTitle}
@@ -49,7 +52,7 @@ const CardPrice: React.FC<PropsPriceCard> = ({ price }) => {
                color: theme.COLORS.PIN_TEXT,
             }}
          >
-         $ {price} k
+         U$ {price}
          </Text>
       </View>
    );
@@ -124,7 +127,7 @@ const SubInfo = () => {
       <View
          style={{
             width: "100%",
-            paddingHorizontal: theme.SIZES.font,
+            paddingHorizontal: RFValue(theme.SIZES.font),
             marginTop: -theme.SIZES.extraLarge,
             flexDirection: "row",
             justifyContent: "space-between",

@@ -3,30 +3,13 @@ import { View, Image } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { rootStackParamsList } from '@routes/app.routes';
-
-import SIZES from '../../styles/theme'
-import {
-   Container, Contents, ImagePost, Info, Price,
-} from './styles'
+import { PropsItemsPost, rootStackParamsList } from '@routes/app.routes';
 
 import { SubInfo, CardTitle, CardPrice } from '../SubInfo'
 import { CircleButton, ReactButton } from '../../components/Button'
 import assets from '../../utils/assets'
 import theme from '../../styles/theme';
 
-export type PropsItemsPost = {
-   id: string;
-   name: string;
-   creator: string;
-   price: string;
-   description: string;
-   image: {
-      img_1: any;
-      img_2: any;
-      img_3: any;
-   };
-}
 
 interface Props {
    data: PropsItemsPost;
@@ -67,7 +50,8 @@ const CardDescobrir: React.FC<Props> = ({ data, ...rest }) => {
             <CircleButton
                imgUrl={assets.heart}
                right={10}
-               top={10} />
+               top={10}
+            />
          </View>
 
 
@@ -75,10 +59,8 @@ const CardDescobrir: React.FC<Props> = ({ data, ...rest }) => {
             <View
                style={{
                   marginTop: theme.SIZES.font,
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-
+                  flexDirection: "column",
+                  flex: 1
                }}
             >
                <CardTitle
@@ -87,6 +69,20 @@ const CardDescobrir: React.FC<Props> = ({ data, ...rest }) => {
                   titleSize={theme.SIZES.large}
                   subTitleSize={theme.SIZES.small}
                />
+            </View>
+
+            <View
+               style={{
+                  marginTop: theme.SIZES.font,
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+               }}
+            >
+               <CardPrice
+                  price={data.price}
+               />
+
                <ReactButton
                   title='Ver'
                   color={theme.COLORS.PIN_PRIMARY}
@@ -99,20 +95,11 @@ const CardDescobrir: React.FC<Props> = ({ data, ...rest }) => {
                style={{
                   marginTop: theme.SIZES.font,
                   flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
+                  justifyContent: 'space-between',
+                  flex: 1
                }}
             >
-               <CardPrice
-                  price={data.price}
-               />
-               <ReactButton
-                  color={theme.COLORS.PIN_PRIMARY}
-                  title={'Contratar'}
-                  minWidth={120}
-                  fontSize={theme.SIZES.small}
-                  handlePress={() => alert('Teste')}
-               />
+
             </View>
          </View>
       </View>

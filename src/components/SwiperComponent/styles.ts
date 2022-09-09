@@ -5,10 +5,10 @@ export const styles = StyleSheet.create({
 
    },
    slide:{
-     flex:1,
+
      justifyContent: 'center',
      alignItems: 'center',
-     backgroundColor: '#fff'
+     backgroundColor: '#FFF'
    }
 
 })

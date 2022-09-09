@@ -1,59 +1,97 @@
+import { Poppins_600SemiBold } from "@expo-google-fonts/poppins";
+import theme from "@styles/theme";
 import { StatusBar, StyleSheet } from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export const styles = StyleSheet.create({
-   container:{
+   container: {
       flex: 1,
-      marginTop: StatusBar.currentHeight || 0,
+      backgroundColor: theme.COLORS.BACKGROUNDLIGHT
    },
-   swiperContent:{
+   swiperContent: {
       flexDirection: 'row',
-      height: 340,
+      height: 230,
       width: '100%',
-    },
-    headerContent:{
+   },
+   headerContent: {
       paddingHorizontal: 20,
-      flexDirection: 'row',
-      alignItems: 'center',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
       width: '100%',
-      marginTop: 20,
-    },
-    house:{
+      marginTop: 30
+   },
+
+   price: {
       fontFamily: 'Poppins_700Bold',
-      fontSize: 18,
-      color: '#4f4a4a'
-    },
-    rating:{
+      fontSize: RFValue(22),
+      color: theme.COLORS.TEXTDARK,
+   },
+   TitleFeed: {
+      fontFamily: 'Poppins_700Bold',
+      fontSize: RFValue(21),
+      color: theme.COLORS.BACKGROUNDDARK,
+   },
+   rating: {
       fontFamily: 'Poppins_500Medium',
-      fontSize: 9,
+      fontSize: RFValue(11),
       color: '#4f4a4a'
-    },
-    myStarStyle:{
+   },
+   myStarStyle: {
       color: '#E7A74e',
       backgroundColor: 'transparent',
       textShadowColor: '#000',
-      textShadowOffset: {width: 1, height: 1},
+      textShadowOffset: { width: 1, height: 1 },
       textShadowRadius: 1,
-    },
-    price:{
-      paddingHorizontal: 20,
+   },
+   titleDescription: {
       fontFamily: 'Poppins_700Bold',
-      fontSize: 16,
-      color: '#000'
-    },
-    description:{
+      paddingHorizontal: 20,
+      color: theme.COLORS.TEXTDARK,
+      fontSize:  RFValue(16),
+      lineHeight: 20,
+      marginBottom: 10,
+   },
+   description: {
       fontFamily: 'Poppins_500Medium',
       paddingHorizontal: 20,
-      color: '#b3aeae',
-      fontSize: 14,
+      color: theme.COLORS.PIN_TEXT,
+      fontSize: RFValue(15),
+      textAlign: "auto",
+      lineHeight: 20,
+   },
+   titleEndereco: {
+      fontFamily: 'Poppins_700Bold',
+      paddingHorizontal: 20,
+      color: theme.COLORS.TEXTDARK,
+      fontSize:  RFValue(16),
       lineHeight: 20,
       marginTop: 20,
-    },
-    slide:{
+   },
+   endereco: {
+      fontFamily: 'Poppins_500Medium',
+      paddingHorizontal: 20,
+      color: theme.COLORS.PIN_TEXT,
+      fontSize: RFValue(15),
+      textAlign: "auto",
+      lineHeight: 20,
+   },
+   slide: {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#FFF',
-      height: 90,
+      height: 70,
       borderRadius: 8,
       marginRight: 20,
-    }
+   },
+
+   containerContacts: {
+      flex: 1,
+      paddingHorizontal: 20,
+      marginTop: 10,
+   },
+   titleContact: {
+      fontFamily: 'Poppins_500Medium',
+      fontSize:  RFValue(16),
+      marginBottom: 10,
+   },
 })

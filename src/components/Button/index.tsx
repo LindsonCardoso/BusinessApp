@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Image, StyleSheet, Text , StatusBar} from 'react-native';
 import { RectButtonProps, RectButton } from 'react-native-gesture-handler';
+import { RFValue } from 'react-native-responsive-fontsize';
 import theme from '../../styles/theme';
 import { styles } from './styles';
 
@@ -35,7 +36,6 @@ const CircleButton: React.FC<Props> = ({ imgUrl, left, right, top, handlePress, 
 
 
 const ReactButton: React.FC<PropsReactButton> = ({title, color, minWidth, fontSize, handlePress, ...rest }) => {
-
    return (
       <TouchableOpacity
          style={{
@@ -50,7 +50,7 @@ const ReactButton: React.FC<PropsReactButton> = ({title, color, minWidth, fontSi
          <Text
             style={{
                fontFamily: 'Poppins_600SemiBold',
-               fontSize: fontSize,
+               fontSize: RFValue(fontSize),
                color: theme.COLORS.WHITE_100,
                textAlign: "center",
             }}

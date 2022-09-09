@@ -16,7 +16,22 @@ import Home from '../screens/Home';
 
 import Anuncie from '../screens/Anuncie';
 import { NavigatorScreenParams } from '@react-navigation/native';
-import { PropsItemsPost  } from '../components/Card-Descobrir'
+
+export type PropsItemsPost = {
+   id: string;
+   name: string;
+   creator: string;
+   price: string;
+   description: string;
+   image: {
+      img_1: any;
+      img_2: any;
+      img_3: any;
+   };
+   contact: string;
+   email: string;
+}
+
 
 export type rootStackParamsList = {
    Buttom: NavigatorScreenParams<HomeTabsParamList>
@@ -84,11 +99,13 @@ function TabScreen() {
 const AppRoutes = () => {
    return (
       <Stack.Navigator
-      screenOptions={{  headerShown: false}}
+         screenOptions={{
+            headerShown: false
+         }}
          initialRouteName="Buttom"
          >
-         <Stack.Screen name="Buttom" component={TabScreen}  />
-         <Stack.Screen name="Detalhe" component={Detalhes} />
+         <Stack.Screen name="Buttom" component={TabScreen}   />
+         <Stack.Screen name="Detalhe" component={Detalhes} options={{  headerShown: true}} />
       </Stack.Navigator>
    )
 }
